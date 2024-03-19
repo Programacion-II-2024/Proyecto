@@ -1,4 +1,6 @@
-﻿namespace Proyecto
+﻿using Proyecto.Views;
+
+namespace Proyecto
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new NavigationPage(new TareaMainPage());
         }
     }
 }
