@@ -5,33 +5,34 @@ namespace Proyecto.Services
 {
     public class TareaService
     {
-        private readonly SQLiteAsyncConnection _dbConnection;
+        private readonly SQLiteConnection _dbConnection;
 
         public TareaService()
         {
-            string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Tarea.db3");
-            _dbConnection = new SQLiteAsyncConnection(dbPath);
-            _dbConnection.CreateTableAsync<Tarea>().Wait();
+            string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Empleado.db3");
+            _dbConnection = new SQLiteConnection(dbPath);
+            _dbConnection.CreateTable<Tarea>();
         }
 
-        public async Task<List<Tarea>> GetAllTareasAsync()
+        public List<Tarea> GetAll()
         {
-            return await _dbConnection.Table<Tarea>().ToListAsync();
+            var res = _dbConnection.Table<Tarea>().ToList();
+            return res;
         }
 
-        public async Task<int> InsertTareaAsync(Tarea tarea)
+        public int Insert(Tarea tarea)
         {
-            return await _dbConnection.InsertAsync(tarea);
+            return _dbConnection.Insert(tarea);
         }
 
-        public async Task<int> UpdateTareaAsync(Tarea tarea)
+        public int Update(Tarea tarea)
         {
-            return await _dbConnection.UpdateAsync(tarea);
+            return _dbConnection.Update(tarea);
         }
 
-        public async Task<int> DeleteTareaAsync(Tarea tarea)
+        public int Delete(Tarea tarea)
         {
-            return await _dbConnection.DeleteAsync(tarea);
+            return _dbConnection.Delete(tarea);
         }
     }
 }
