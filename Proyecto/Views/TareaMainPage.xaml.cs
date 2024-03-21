@@ -6,7 +6,7 @@ public partial class TareaMainPage : ContentPage
 	private TareaMainPageViewModel _viewModel;
 	public TareaMainPage()
 	{
-		InitializeComponent();
+        InitializeComponent();
 		_viewModel = new TareaMainPageViewModel();
 		this.BindingContext = _viewModel;
 	}

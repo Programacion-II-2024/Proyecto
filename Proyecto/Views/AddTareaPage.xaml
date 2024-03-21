@@ -22,5 +22,6 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
+        <Button Text="Guardar" x:Name="btnGuardarEditar" Command="{Binding AddUpdateCommand}" />
     </VerticalStackLayout>
 </ContentPage>
