@@ -1,12 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using Proyecto.Models;
+using Proyecto.Services;
 
 namespace Proyecto.ViewModels
 {
-    internal class AddTareaPageViewModel
+    public partial class AddTareaPageViewModel : ObservableObject 
     {
+        [ObservableProperty]
+        private int id;
+
+        [ObservableProperty]
+        private string nombre;
+
+        [ObservableProperty]
+        private string descripcion;
+
+       
+
     }
 }
