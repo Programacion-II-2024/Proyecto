@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proyecto.Views.TareaMainPage"
              xmlns:viewModel="clr-namespace:Proyecto.ViewModels"
              xmlns:models="clr-namespace:Proyecto.Models"
-             x:DataType="viewModel:TareaMainPageViewModel">
+             x:DataType="viewModel:TareaMainPageViewModel"
+             x:Name="tareaMainPage">
     <ScrollView>
         <VerticalStackLayout Padding="10,0,10,0">
             <Button Text="Agregar Tarea" HorizontalOptions="Start" Command="{Binding GoToAddTareaPageCommand}" />

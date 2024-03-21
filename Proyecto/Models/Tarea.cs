@@ -21,5 +21,6 @@ namespace Proyecto.Models
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public EstadoTareaEnum EstadoTarea { get; set; }
-    }
+
+            }
 }

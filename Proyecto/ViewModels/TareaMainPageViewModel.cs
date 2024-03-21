@@ -49,7 +49,7 @@ public partial class TareaMainPageViewModel : ObservableObject
 			switch (res)
 			{
 				case "Actualizar":
-					await App.Current!.MainPage!.DisplayAlert("Eliminar Tarea", "¿Desea eliminar la Tarea?", "Si", "No");
+					await App.Current!.MainPage!.Navigation.PushAsync(new AddTareaPage(tarea)); 
 					break;
 				case "Eliminar":
 					bool respuesta = await App.Current!.MainPage!.DisplayAlert("Eliminar Tarea", "¿Desea Eliminar la taea", "Si", "No");

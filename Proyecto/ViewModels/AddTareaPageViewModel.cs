@@ -24,7 +24,7 @@ namespace Proyecto.ViewModels
         public AddTareaPageViewModel()
         {
             _tareaService = new TareaService();
-            EstadoTarea = EstadoTareaEnum.SinIniciar; // Valor predeterminado
+           
         }
 
         public AddTareaPageViewModel(Tarea tarea)
@@ -80,11 +80,6 @@ namespace Proyecto.ViewModels
                 else if (string.IsNullOrEmpty(tarea.Descripcion))
                 {
                     Alerta("ADVERTENCIA", "Escriba la descripción");
-                    return false;
-                }
-                else if (tarea.EstadoTarea == EstadoTareaEnum.SinIniciar) // Agrega la validación para el estado de la tarea
-                {
-                    Alerta("ADVERTENCIA", "Seleccione el estado de la tarea");
                     return false;
                 }
                 else
