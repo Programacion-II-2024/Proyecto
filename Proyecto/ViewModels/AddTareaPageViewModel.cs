@@ -19,6 +19,7 @@ namespace Proyecto.ViewModels
         [ObservableProperty]
         private EstadoTareaEnum estadoTarea;
 
+          
         private readonly TareaService _tareaService;
 
         public AddTareaPageViewModel()
@@ -48,6 +49,8 @@ namespace Proyecto.ViewModels
                     EstadoTarea = EstadoTarea,
                     Id = Id
                 };
+
+
 
                 if (Validar(tarea))
                 {

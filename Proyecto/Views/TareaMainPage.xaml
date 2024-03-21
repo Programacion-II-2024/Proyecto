@@ -22,7 +22,7 @@
                             <Label Text="{Binding Descripcion}" Grid.Row="1" Grid.Column="1" />
                             <Label Text="{Binding EstadoTarea}" Grid.Row="1" Grid.Column="2" />
                             <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Source={x:Reference Name=tareaMainPage}, Path=BindingContext.SelectTareaCommand}" CommandParameter="{Binding .}" />
+                                <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModel:TareaMainPageViewModel}},Path=SelectTareaCommand}" CommandParameter="{Binding .}" />
                             </Grid.GestureRecognizers>
                         </Grid>
                     </DataTemplate>
