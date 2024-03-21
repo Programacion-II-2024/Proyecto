@@ -17,7 +17,7 @@ namespace Proyecto.ViewModels
         private string descripcion;
 
         [ObservableProperty]
-        private EstadoTareaEnum estadoTarea;
+        private string estadoTarea;
 
           
         private readonly TareaService _tareaService;

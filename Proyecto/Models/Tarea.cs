@@ -20,7 +20,7 @@ namespace Proyecto.Models
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        public EstadoTareaEnum EstadoTarea { get; set; }
+        public string EstadoTarea { get; set; }
 
             }
 }
