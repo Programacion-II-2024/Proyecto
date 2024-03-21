@@ -85,6 +85,11 @@ namespace Proyecto.ViewModels
                     Alerta("ADVERTENCIA", "Escriba la descripción");
                     return false;
                 }
+                else if (string.IsNullOrEmpty(tarea.EstadoTarea))
+                {
+                    Alerta("ADVERTENCIA", "Seleccione el estado de la tarea");
+                    return false;
+                }
                 else
                 {
                     return true;
@@ -96,6 +101,7 @@ namespace Proyecto.ViewModels
                 return false;
             }
         }
+
 
         private void Alerta(string tipo, string mensaje)
         {
