@@ -6,29 +6,29 @@
              Title="Agregar Tarea">
     <ContentPage.Resources>
         <Style TargetType="Label">
-            <Setter Property="TextColor" Value="#f7f7f7" />
+            <Setter Property="TextColor" Value="#9370db" />
             <Setter Property="FontSize" Value="24" /> <!-- Aumento del tamaño de letra -->
         </Style>
         <Style TargetType="Entry">
-            <Setter Property="TextColor" Value="White" />
+            <Setter Property="TextColor" Value="Black"/>
             <Setter Property="FontSize" Value="20" /> <!-- Aumento del tamaño de letra -->
         </Style>
         <Style TargetType="Button">
-            <Setter Property="BackgroundColor" Value="#3000ee" />
+            <Setter Property="BackgroundColor" Value="Black" />
             <Setter Property="TextColor" Value="White" />
             <Setter Property="FontSize" Value="28" /> <!-- Aumento del tamaño de letra -->
             <Setter Property="Margin" Value="20" />
-            <Setter Property="BorderColor" Value="Black" />
+            <Setter Property="BorderColor" Value="Black"/>
         </Style>
         <Style TargetType="Picker">
-            <Setter Property="TextColor" Value="White" />
+            <Setter Property="TextColor" Value="Black" />
             <Setter Property="FontSize" Value="20" /> <!-- Aumento del tamaño de letra -->
         </Style>
     </ContentPage.Resources>
 
     <AbsoluteLayout>
         <!-- Fondo con imagen -->
-        <Image Source="https://wallpapers.com/images/hd/black-and-gold-superman-logo-ajgk20537eidt6th.jpg" 
+        <Image Source="paper2.jpg" 
                Aspect="AspectFill" 
                AbsoluteLayout.LayoutBounds="0,0,1,1" 
                AbsoluteLayout.LayoutFlags="All" />
@@ -51,7 +51,10 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
-            <Button Text="Guardar" x:Name="btnGuardarEditar" Command="{Binding AddUpdateCommand}" />
+            <Button Text="Guardar"
+        x:Name="btnGuardarEditar"
+        Command="{Binding AddUpdateCommand}"
+        BackgroundColor="#9370db" />
         </VerticalStackLayout>
     </AbsoluteLayout>
 </ContentPage>

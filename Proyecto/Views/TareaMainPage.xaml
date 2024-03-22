@@ -26,12 +26,15 @@
 
     <AbsoluteLayout>
         <!-- Fondo con imagen GIF -->
-        <Image Source="https://wallpapers.com/images/hd/black-and-gold-superman-logo-ajgk20537eidt6th.jpg" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
+        <Image Source="paper2.jpg" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
 
         <!-- Contenido de la página -->
         <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
             <VerticalStackLayout Padding="10,10,10,10">
-                <Button Text="Agregar Tarea" HorizontalOptions="CenterAndExpand" Command="{Binding GoToAddTareaPageCommand}" />
+                <Button Text="Agregar Tarea"
+        HorizontalOptions="CenterAndExpand"
+        Command="{Binding GoToAddTareaPageCommand}"
+        BackgroundColor="#9370db" />
 
                 <Grid Margin="0,2,0,5" RowDefinitions="Auto" ColumnDefinitions="33*,33*,33*">
                     <Label Text="Nombre" FontAttributes="Bold" HorizontalTextAlignment="Start" Grid.Row="0" Grid.Column="0" />
