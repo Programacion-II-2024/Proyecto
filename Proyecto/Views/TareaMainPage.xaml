@@ -5,29 +5,55 @@
              xmlns:models="clr-namespace:Proyecto.Models"
              x:DataType="viewModel:TareaMainPageViewModel"
              x:Name="tareaMainPage">
-    <ScrollView>
-        <VerticalStackLayout Padding="10,0,10,0">
-            <Button Text="Agregar Tarea" HorizontalOptions="Start" Command="{Binding GoToAddTareaPageCommand}" />
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="#3000ee" />
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#3000ee" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="Margin" Value="20" />
+            <Setter Property="BorderColor" Value="Black" />
+        </Style>
+        <Style TargetType="Grid">
+            <Setter Property="BackgroundColor" Value="#F3E5FF" />
+            <Setter Property="Margin" Value="0,10" />
+            <Setter Property="Padding" Value="0,3" />
+        </Style>
+    </ContentPage.Resources>
 
-            <Grid Margin="0,5,0,5" RowDefinitions="Auto" ColumnDefinitions="33*,33*,33*">
-                <Label Text="Nombre" FontAttributes="Bold" HorizontalTextAlignment="Start" Grid.Row="0" Grid.Column="0" />
-                <Label Text="Descripción" FontAttributes="Bold" HorizontalTextAlignment="Start" Grid.Row="0" Grid.Column="1" />
-                <Label Text="Estado" FontAttributes="Bold" HorizontalTextAlignment="Start" Grid.Row="0" Grid.Column="2" />
-            </Grid>
-            <CollectionView ItemsSource="{Binding TareaCollection}" >
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="models:Tarea">
-                        <Grid RowSpacing="0" RowDefinitions="10,Auto,10,0.5" ColumnDefinitions="33*,33*,33*" VerticalOptions="FillAndExpand">
-                            <Label Text="{Binding Nombre}" Grid.Row="1" Grid.Column="0" />
-                            <Label Text="{Binding Descripcion}" Grid.Row="1" Grid.Column="1" />
-                            <Label Text="{Binding EstadoTarea}" Grid.Row="1" Grid.Column="2" />
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModel:TareaMainPageViewModel}},Path=SelectTareaCommand}" CommandParameter="{Binding .}" />
-                            </Grid.GestureRecognizers>
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </VerticalStackLayout>
-    </ScrollView>
+    <AbsoluteLayout>
+        <!-- Fondo con imagen GIF -->
+        <Image Source="https://wallpapers.com/images/hd/black-and-gold-superman-logo-ajgk20537eidt6th.jpg" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
+
+        <!-- Contenido de la página -->
+        <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+            <VerticalStackLayout Padding="10,10,10,10">
+                <Button Text="Agregar Tarea" HorizontalOptions="CenterAndExpand" Command="{Binding GoToAddTareaPageCommand}" />
+
+                <Grid Margin="0,2,0,5" RowDefinitions="Auto" ColumnDefinitions="33*,33*,33*">
+                    <Label Text="Nombre" FontAttributes="Bold" HorizontalTextAlignment="Start" Grid.Row="0" Grid.Column="0" />
+                    <Label Text="Descripción" FontAttributes="Bold" HorizontalTextAlignment="Start" Grid.Row="0" Grid.Column="1" />
+                    <Label Text="Estado" FontAttributes="Bold" HorizontalTextAlignment="Start" Grid.Row="0" Grid.Column="2" />
+                </Grid>
+                <CollectionView ItemsSource="{Binding TareaCollection}" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Tarea">
+                            <Grid RowSpacing="10" RowDefinitions="10,Auto,10,0.5" ColumnDefinitions="33*,33*,33*" VerticalOptions="FillAndExpand">
+                                <Label Text="{Binding Nombre}" Grid.Row="1" Grid.Column="0" />
+                                <Label Text="{Binding Descripcion}" Grid.Row="1" Grid.Column="1" />
+                                <Label Text="{Binding EstadoTarea}" Grid.Row="1" Grid.Column="2" />
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModel:TareaMainPageViewModel}},Path=SelectTareaCommand}" CommandParameter="{Binding .}" />
+                                </Grid.GestureRecognizers>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+    </AbsoluteLayout>
 </ContentPage>
+
